@@ -1,0 +1,198 @@
+.header-nav {
+	background: #222;
+	margin-bottom: 20px;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	z-index: 9;
+}
+.option-admin {
+	padding: 25px 15px;
+	color: #fff;
+	display: inline-block;
+	cursor: pointer;
+}
+.option-admin:hover {
+	background: #3f51b5;
+	transition: all 400ms ease;
+}
+.nav-bar {
+	display: block;
+}
+.nav-bar li {
+	display: inline-block;
+	padding: 15px 10px;
+	list-style: none;
+	color: #222;
+}
+ul.nav-bar {
+	padding: 0px;
+}
+.nav-bar li a {
+	text-decoration: none;
+	color: #222;
+	font-size: 18px;
+}
+.nav-bar li a:hover {
+	color: #3f51b5;
+}
+
+/* admin style */
+
+.slideBar {
+	display: block;
+	overflow: auto;
+	width: 250px;
+	height: 100%;
+	background: #222;
+	color: #ccc;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	box-shadow: 2px 0px 3px rgba(0,0,0,0.15);
+	z-index: 10;
+}
+.slideBar ul {
+	list-style: none;
+	padding: 0px;
+	display: none;
+}
+.slideBar {
+	list-style: none;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+.slideBar li a {
+	display: block;
+	padding: 10px 15px;
+	color: #fff;
+	text-decoration: none;
+	transition: all 400ms ease;
+	position: relative;
+}
+.slideBar li {
+	display: block;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+	position: relative;
+}
+.slideBar li a:hover {
+	background: #3f51b5;
+	text-shadow: 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 4px 4px 5px rgba(0,0,0,0.15), -4px -4px 5px rgba(0,0,0,0.15);
+	z-index: 2;
+}
+.slideBar .primary-link {
+	padding: 25px 15px;
+}
+.slideBar li li > a {
+	background: #3f51b5;
+}
+.content-admin {
+	display: block;
+	margin-left: 250px;
+}
+.link-menu-active {
+	background: #3f51b5;
+	text-shadow: 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 4px 4px 5px rgba(0,0,0,0.15), -4px -4px 5px rgba(0,0,0,0.15);
+	position: relative;
+	z-index: 3;
+}
+.link-menu-active:after {
+	content: "_";
+	animation: fade 1s linear infinite;
+	-moz-animation: fade 1s linear infinite;
+	-webkit-animation: fade 1s linear infinite;
+}
+@keyframes fade {
+	0% {
+		opacity: 1.0;
+	}
+	10% {
+		opacity: 1.0;
+	}
+	20% {
+		opacity: 1.0;
+	}
+	30% {
+		opacity: 1.0;
+	}
+	40% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0;
+	}
+	60% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+@-moz-keyframes fade {
+	0% {
+		opacity: 1.0;
+	}
+	10% {
+		opacity: 1.0;
+	}
+	20% {
+		opacity: 1.0;
+	}
+	30% {
+		opacity: 1.0;
+	}
+	40% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0;
+	}
+	60% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+#content {
+	margin-top: 120px;
+}
+.footer-modify {
+	padding: 20px;
+}
+/* use font-awesome */
+.slideBar li.sub i.fa-angle-down, .slideBar li.sub i.fa-angle-up {
+	position: absolute;
+	top: 14px;
+	right: 10px;
+	z-index: 3;
+	pointer-events: none;
+}
+/* */
+.table-bordered thead > tr {
+	background: #3F51B5;
+	color: #fff;
+}
