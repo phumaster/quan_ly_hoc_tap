@@ -16,9 +16,8 @@ class Grade extends Controller
     }
 
     public function postAdd(addGrade $request){
-    	if(\App\Grade::create($request->only(['grade_name','grade_info']))){
-    		Session::flash('msg','Add grade success!');
+    	if(\App\Grade::create($request->only(['grade_name','grade_info']))) {
+    		return view('admin.grade.add')->with(['msg' => 'Add grade success!']);
     	}
-    	return view('admin.grade.add');
     }
 }

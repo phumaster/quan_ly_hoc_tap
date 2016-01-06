@@ -33,16 +33,16 @@ Add class
 							@endif
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<div class="form-group">
-								<label for="grade_name">Name</label>
-								<input type="text" name="grade_name" value="{{ old('grade_name') }}" id="grade_name" class="form-control">
+								<label for="class_name">Name</label>
+								<input type="text" name="class_name" value="{{ old('class_name') }}" id="class_name" class="form-control">
 							</div>
 							<div class="form-group">
-								<label for="grade_info">Info</label>
-								<textarea id="grade_info" name="grade_info" class="form-control" rows="10"></textarea>
+								<label for="class_info">Info</label>
+								<textarea id="class_info" name="class_info" class="form-control" rows="10"></textarea>
 							</div>
 							<div class="form-group">
-								<label for="grade">Grade</label>
-								<select name="grade" id="grade" class="form-control">
+								<label for="grades_id">Grade</label>
+								<select name="grades_id" id="grades_id" class="form-control">
 									@foreach($grades as $grade)
 										<option value="{{ $grade->id }}">{{ $grade->grade_name }}</option>
 									@endforeach

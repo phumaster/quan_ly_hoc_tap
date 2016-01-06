@@ -27,6 +27,12 @@ Add user
 										</ul>
 									</div>
 								@endif
+
+								@if(Session::has('msg'))
+									<div class="alert alert-success">
+										{{ Session::get('msg') }}
+									</div>
+								@endif
 								<div class="display-response"></div>
 								<div class="form-group">
 									<label for="email">Email</label>
@@ -70,6 +76,14 @@ Add user
 								<div class="form-group">
 									<label for="cmnd">CMND number</label>
 									<input type="text" name="cmnd" id="cmnd" class="form-control" value="{{old('cmnd')}}">
+								</div>
+								<div class="form-group">
+									<label for="roles">Roles</label>
+									<select name="roles" id="roles" class="form-control">
+										@foreach($roles as $role)
+											<option value="{{ $role->role_title }}"> {{ $role->role_title }} </option>
+										@endforeach
+									</select>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>

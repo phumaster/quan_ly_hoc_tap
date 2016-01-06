@@ -13,6 +13,11 @@ All user
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
+					@if(Session::has('msg'))
+						<div class="alert alert-success">
+							{{ Session::get('msg') }}
+						</div>
+					@endif
 					<div class="">
 						<table class="table table-bordered">
 							<thead>

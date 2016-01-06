@@ -11,60 +11,81 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Admin router */
 
 Route::group(['prefix' => 'admin'], function(){
 
-	Route::get('/',[
+	/* login into admin */
+
+	get('/',[
 		'as' => 'admin.login',
 		'uses' => 'Admin\Authentication@getLogin'
 	]);
 
-	Route::post('/',[
+	post('/',[
 		'uses' => 'Admin\Authentication@postLogin'
 	]);
 
-	Route::get('/logout',[
+	/* logout */
+
+	get('/logout',[
 		'as' => 'admin.logout',
 		'uses' => 'Admin\Authentication@logout'
 	]);
 
-	Route::get('/user/add',[
-		'as' => 'add.user',
-		'uses' => 'Admin\User@getAdd'
-	]);
+	/* route user */
 
-	Route::post('/user/add',[
-		'uses' => 'Admin\User@postAdd'
-	]);
-
-	Route::get('/user/all',[
+	get('/user',[
 		'as' => 'list.user',
 		'uses' => 'Admin\User@listAll'
 	]);
 
-	Route::get('/score',[
+	get('/user/add',[
+		'as' => 'add.user',
+		'uses' => 'Admin\User@getAdd'
+	]);
+
+	post('/user/add',[
+		'uses' => 'Admin\User@postAdd'
+	]);
+
+	get('/user/del/{id}',[
+		'as' => 'delete.user', 
+		'uses' => 'Admin\User@destroy'
+	])->where(['id' => '[0-9]+']);
+
+	/* route score */
+
+	get('/score',[
 		'as' => 'score',
 		'uses' => 'Admin\Score@setting'
 	]);
 
-	Route::get('/grades/add',[
+	/* route grade */
+
+	get('/grades/add',[
 		'as' => 'add.grade',
 		'uses' => 'Admin\Grade@getAdd'
 	]);
 
-	Route::post('/grades/add',[
+	post('/grades/add',[
 		'uses' => 'Admin\Grade@postAdd'
 	]);
 
-	Route::get('/class/add',[
+	/* route class */
+
+	get('/class/add',[
 		'as' => 'add.class',
 		'uses' => 'Admin\ClassControl@getAdd'
 	]);
 
-	Route::post('/class/add',[
+	post('/class/add',[
 		'uses' => 'Admin\ClassControl@postAdd'
 	]);
+});
+
+/* Index page */
+
+Route::get('/', function () {
+    return view('welcome');
 });

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\addClassRequest;
 
 class ClassControl extends Controller
 {
@@ -14,7 +15,10 @@ class ClassControl extends Controller
         return view('admin.class.add', $data);
     }
 
-    public function postAdd(){
-        return "Post class";
+    public function postAdd(addClassRequest $request){
+        if(\App\ClassModel::create($request->except(['_token']))){
+            return redirect()->route('add.class')->with(['msg' => 'Add class success!']);
+        }
+        return redirect()->route('add.class')->withErrors('Errors database!'); 
     }
 }
