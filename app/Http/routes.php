@@ -61,6 +61,8 @@ Route::group(['prefix' => 'admin'], function(){
 		'uses' => 'Admin\Score@setting'
 	]);
 
+	//
+
 	/* route grade */
 
 	get('/grades/add',[
